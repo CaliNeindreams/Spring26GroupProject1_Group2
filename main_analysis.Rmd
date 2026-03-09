@@ -45,3 +45,44 @@ hints_data$RaceEthn5 <- factor(hints_data$RaceEthn5, levels = c(1, 2, 3, 4, 5), 
 hints_clndata <- subset(hints_data, select = c(HHID, PersonID, Age, AvgDrinksPerWeek, WeeklyMinutesModerateExercise, BMI, QualityCare, BirthGender, smokeStat, RaceEthn5))
 ```
 
+
+
+ ##4. Univariate Visualization
+
+### 4.I QualityCare and RaceEthn5
+#Celia Lopez
+
+```{r}
+# Bar plot for QualityCare
+qc <- table(hints$QualityCare)
+
+barplot(qc,
+        main = "Distribution of QualityCare",
+        xlab = "QualityCare",
+        ylab = "Count")
+
+# Pie chart for RaceEthn5
+race <- table(hints$RaceEthn5)
+
+pie(race,
+    main = "Distribution of RaceEthn5")
+```
+
+Interpretation: The bar plot shows the distribution of QualityCare categories. Some categories appear more frequently, indicating that many respondents reported similar levels of healthcare quality. The pie chart shows the proportion of individuals across RaceEthn5 categories.
+
+### 4.II Age and BMI
+
+```{r}
+# Histogram for Age
+hist(hints$Age,
+     main = "Distribution of Age",
+     xlab = "Age",
+     ylab = "Frequency")
+
+# Boxplot for BMI
+boxplot(hints$BMI,
+        main = "Distribution of BMI",
+        ylab = "BMI")
+```
+
+Interpretation: The histogram shows the distribution of Age values among participants. Most individuals fall within a middle age range. The boxplot shows the spread of BMI values, with the median near the center and possible outliers.
